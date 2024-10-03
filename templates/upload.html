@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Attendance and CSV Files</h1>
+        <form action="/process" method="post" enctype="multipart/form-data">
+            <div class="file-upload">
+                <input type="file" name="attendance_file" id="attendance_file" required>
+                <label for="attendance_file">
+                    <i class="fa fa-cloud-upload"></i> Select Btech Attendance File
+                </label>
+            </div>
+            <div class="file-upload">
+                <input type="file" name="csv_files" id="csv_files" multiple required>
+                <label for="csv_files">
+                    <i class="fa fa-cloud-upload"></i> Select CSV Files
+                </label>
+            </div>
+            <input type="submit" value="Upload and Process" class="btn">
+        </form>
+    </div>
+</body>
+</html>
